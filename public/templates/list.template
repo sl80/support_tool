@@ -1,0 +1,8 @@
+<div class="list">
+  <div class="list-name"><%= list.name %></div>
+  <div class="list-host"><%= list.host.name %></div>
+  <div class="list-type"><%= list.list_type.name %></div>
+  <div style="clear:left"></div>
+</div>
+
+
