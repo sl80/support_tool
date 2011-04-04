@@ -3,7 +3,18 @@
 <head>
   <title>SupportTool</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, 'sammy', 'plugins/sammy.template' %>
+  <%= javascript_include_tag 'vendor/jquery',
+    'vendor/underscore',
+    'vendor/backbone',
+    'vendor/json2',
+    'vendor/ejs_1.0/ejs.js',
+    'vendor/ejs_1.0/view.js',
+    'application',
+    'app/models/mailing_list',
+    'app/controllers/main',
+    'app/views/index',
+    'app/views/list'
+  %>
   <%= csrf_meta_tag %>
 </head>
 <body>
