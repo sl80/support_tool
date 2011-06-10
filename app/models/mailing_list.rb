@@ -4,6 +4,10 @@ class MailingList < ActiveRecord::Base
   
   class << self
     
+    def search(term)
+      where('name LIKE ?', "%#{term}%")
+    end
+    
     def full
       includes [:host, :list_type]
     end

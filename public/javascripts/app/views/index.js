@@ -1,7 +1,7 @@
 App.Views.Index = Backbone.View.extend({
     initialize: function() {
         this.id = 'main';
-        this.collection = MailingLists;
+        this.collection = mailingLists;
         this.template = new EJS({url: 'javascripts/app/templates/index.ejs'})
         
         this.collection.bind('add', this.addOne);
@@ -12,17 +12,11 @@ App.Views.Index = Backbone.View.extend({
         this.addAll();
     },
     
+    events: {    
+      "click .search" : "search"
+    },
+    
     render: function() {
-        console.log('rendering');
-        // if(this.collection.length > 0) {
-        //             var out = "<h3><a href='#new'>Create New</a></h3><ul>";
-        //             this.collection.each(function(item) {
-        //                 out += "<li><a href='#documents/" + item.id + "'>" + item.escape('name') + "</a></li>";
-        //             });
-        //             out += "</ul>";
-        //         } else {
-        //             out = "<h3>No documents! <a href='#new'>Create one</a></h3>";
-        //         }
         $(this.el).html(this.template.render(this));
         $('#'+this.id).html(this.el);
     },
@@ -35,6 +29,16 @@ App.Views.Index = Backbone.View.extend({
     addAll: function() {
       var self = this;
       this.collection.each(function(list){ self.addOne(list); });
+    },
+    resetAll: function(){
+      this.$(".mailing-lists").html('');
+      this.addAll();
+    },
+    
+    search: function(){
+      this.collection.search(this.$('.searchfield')[0].value);
+      this.resetAll();
+      return false;
     }
     
 });

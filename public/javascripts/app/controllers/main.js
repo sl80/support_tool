@@ -4,8 +4,7 @@ App.Controllers.Main = Backbone.Controller.extend({
     },
     
     index: function() {
-        console.log(MailingLists.fetch);
-        MailingLists.fetch({
+        mailingLists.fetch({
           success:function(){
             new App.Views.Index();
           }

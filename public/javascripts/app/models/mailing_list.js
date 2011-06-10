@@ -6,7 +6,18 @@ var MailingList = Backbone.Model.extend({
 //   url: '/mailing_lists.json'
 // });
 
-var MailingLists = new Backbone.Collection;
+var MailingLists = Backbone.Collection.extend({
+  model: MailingList,
+  url: '/mailing_lists.json',
+  search: function(string){
+    var url = this.url;
+    this.url = this.url + '?search=' + string;
+    this.fetch(); 
+    this.url = url; 
+  }
+});
 
-MailingLists.model = MailingList;
-MailingLists.url = '/mailing_lists.json';
+var mailingLists = new MailingLists;
+
+// MailingLists.model = MailingList;
+// MailingLists.url = '/mailing_lists.json';
