@@ -1,4 +1,19 @@
 <li>
-  <a href='#documents/<%=model.id%>'><%=model.escape('name')%></a>
-  <span class="note">melden</span><span class="notice"></span>
+  <div>
+    <span class="name click"><%=model.escape('name')%></span>
+    <span class="note"> melden</span><span class="notice"></span>
+  </div>
+  <div class="box tab tab-<%=model.id%>">
+    DAS IST EIN TEST <span class="close click">x</span>
+    <br>
+    Administrator ändern
+    <br>
+    Administrator Passwort zurücksetzen
+    <br>
+    Moderator ändern
+    <br>
+    Moderator Passwort zurücksetzen
+    <br>
+     Liste löschen
+  </div>  
 </li>

@@ -1,12 +1,15 @@
 App.Views.List = Backbone.View.extend({
-    initialize: function() {
+    initialize: function(data) {
         this.id = 'main';
-        this.template = new EJS({url: 'javascripts/app/templates/list.ejs'})
+        this.template = new EJS({url: 'javascripts/app/templates/list.ejs'});
         this.model.bind('change', this.render);
         this.count = 0;
+        this.tabs = data.tabs;
     },
     events: {    
-      "click .note" : "note"
+      "click .note" : "note",
+      "click .name" : "name",
+      "click .close": "close"
     },
     
     note: function() {
@@ -14,8 +17,15 @@ App.Views.List = Backbone.View.extend({
       this.$('.notice').html(this.count)
     },
     
+    name: function() {
+      this.tabs.panels.set(this.model.id);
+    },
+    
+    close: function() {
+      this.tabs.panels.close();
+    },
+    
     render: function() {
-        console.log('rendering');
         // if(this.collection.length > 0) {
         //             var out = "<h3><a href='#new'>Create New</a></h3><ul>";
         //             this.collection.each(function(item) {

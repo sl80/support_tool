@@ -1,5 +1,34 @@
+#menu {
+  float: left;
+  width:300px;
+}
+
+#main {
+  float: left;
+}
+
+.tab {
+  display: none;
+}
+.tab.tab-active {
+  display: block;
+}
 
 .list div {
   float: left;
   width: 150px;
+}
+
+.box {
+  border: 1px solid #888;
+  background-color: #EEE;
+  border-radius:10px;
+  padding: 5px;
+  position:absolute;
+  z-index: 5;
+  margin-left:20px;
+}
+
+.click {
+  cursor: pointer;
 }
