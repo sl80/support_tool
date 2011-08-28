@@ -8,8 +8,7 @@ App.Views.List = Backbone.View.extend({
     },
     events: {    
       "click .note" : "note",
-      "click .name" : "name",
-      "click .close": "close"
+      "click .name" : "click",
     },
     
     note: function() {
@@ -17,12 +16,9 @@ App.Views.List = Backbone.View.extend({
       this.$('.notice').html(this.count)
     },
     
-    name: function() {
+    click: function() {
+      var self = this;
       this.tabs.panels.set(this.model.id);
-    },
-    
-    close: function() {
-      this.tabs.panels.close();
     },
     
     render: function() {

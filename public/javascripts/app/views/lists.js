@@ -13,10 +13,8 @@ App.Views.Lists = Backbone.View.extend({
         
         this.tabs = {};
         this.render();
-        //console.log('init---')
         this.addAll();
         this.tabs.panels = new Tab(this.$(".mailing-lists"));
-        console.log('PANELS-X', this.panels);
         
     },
     
@@ -32,7 +30,6 @@ App.Views.Lists = Backbone.View.extend({
     addOne: function(list) {
           console.log('addOne');
           var view = new App.Views.List({model: list, tabs: this.tabs});
-          console.log('PANELS-A', this.panels);
           this.$(".mailing-lists").append(view.render().el);
     },
     

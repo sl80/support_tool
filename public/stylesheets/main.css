@@ -1,3 +1,8 @@
+body {
+  font-family: arial;
+  padding:0;
+}
+
 #menu {
   float: left;
   width:300px;
@@ -26,9 +31,35 @@
   padding: 5px;
   position:absolute;
   z-index: 5;
-  margin-left:20px;
+  margin-left:5px;
+  font-size: 0.8em;
+}
+
+.box .item {
+  cursor: pointer;
+}
+
+.box .item:hover {
+  font-weight: bold;
 }
 
 .click {
   cursor: pointer;
+}
+
+.mailing-lists {
+  position: absolute;
+  /* border: 1px solid red; */
+  bottom: 0px;
+  top: 80px;
+  right:0px;
+  left:200px;
+  list-style-type:none;
+  overflow: auto;
+  margin:0;
+}
+
+.mailing-lists li {
+  background-color: #EDF0F9;
+  border-bottom:1px solid #CCC;
 }
