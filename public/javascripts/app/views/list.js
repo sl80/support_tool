@@ -7,8 +7,8 @@ App.Views.List = Backbone.View.extend({
         this.tabs = data.tabs;
     },
     events: {    
-      "click .note" : "note",
-      "click .name" : "click",
+      "click .name" : "click"
+      //"click .note" : "note"
     },
     
     note: function() {
@@ -17,8 +17,9 @@ App.Views.List = Backbone.View.extend({
     },
     
     click: function() {
+      console.log('click');
       var self = this;
-      this.tabs.panels.set(this.model.id);
+      this.tabs.panels.set('edit');
     },
     
     render: function() {
@@ -32,6 +33,8 @@ App.Views.List = Backbone.View.extend({
         //             out = "<h3>No documents! <a href='#new'>Create one</a></h3>";
         //         }
         $(this.el).html(this.template.render(this));
+        console.log('render '+this.model.escape('name'))
+         this.$('.name').bind('click',function(){ console.log('huhuhu'); });
         return this
     }
 });

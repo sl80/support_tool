@@ -1,9 +1,26 @@
-<div>
-  <form>
-    <input type="text" class="searchfield"/> 
-  </form>
-  <span class="search">search</span>
-  <span class="new">Create New</span>
-</div>  
-<ul class="mailing-lists">
-</ul>
+<div class="lists">
+  <div class="tab tab-edit">
+  </div>
+  <div class="tab tab-index tab-active">
+    <div class="lists-search clearfix ">
+      <div class="search">search: </div>
+      <form onsubmit="return false"> 
+        <input type="text" class="searchfield"/> 
+      </form>
+      <div class="new">Create New</div>
+    </div>  
+    <ul class="mailing-lists-head clearfix">
+      <li>
+        Name
+      </li>
+      <li>
+        Status
+      </li>
+    </ul>
+    <div class="mailing-lists-container">
+        <div class="mailing-lists">
+        </div>
+    </div>
+    </table>
+  </div>
+</div>

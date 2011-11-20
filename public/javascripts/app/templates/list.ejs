@@ -1,17 +1,8 @@
-<li>
-  <div>
-    <span class="name click"><%=model.escape('name')%></span>
-    <span class="note"> melden</span><span class="notice"></span>
-  </div>
-  <div class="box tab tab-<%=model.id%>">
-    <span class="item">Administrator ändern</span>
-    <br>
-    <span class="item">Administrator Passwort zurücksetzen</span>
-    <br>
-    <span class="item">Moderator ändern</span>
-    <br>
-    <span class="item">Moderator Passwort zurücksetzen</span>
-    <br>
-    <span class="item">Liste löschen</span>
-  </div>  
-</li>
+<ul class="name clearfix">
+  <li>
+    <%=model.escape('name') %>
+  </li>
+  <li>
+    <%=model.typeName() %>
+  </li>
+</ul>

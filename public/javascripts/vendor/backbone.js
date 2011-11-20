@@ -836,6 +836,8 @@
         if (selector === '') {
           $(this.el).bind(eventName, method);
         } else {
+          var mo = this.model ? this.model.escape('name') : '';
+          console.log(mo+' selector: '+selector+' event:'+eventName+' methodName:'+methodName, this.el);
           $(this.el).delegate(selector, eventName, method);
         }
       }

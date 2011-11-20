@@ -1,4 +1,7 @@
 var MailingList = Backbone.Model.extend({
+  typeName: function(){
+    return this.get('list_type').name
+  }
 });
 
 // var MailingLists = Backbone.Collection.extend({

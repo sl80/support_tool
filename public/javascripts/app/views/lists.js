@@ -14,12 +14,20 @@ App.Views.Lists = Backbone.View.extend({
         this.tabs = {};
         this.render();
         this.addAll();
-        this.tabs.panels = new Tab(this.$(".mailing-lists"));
+        this.tabs.panels = new Tab(this.$(".lists"));
+        this.$('.searchfield').keypress(function(e){
+              console.log('huhu');
+              if(e.which == 13){
+                 console.log('haha');
+                 self.search();
+               }
+        });
         
     },
     
     events: {    
-      "click .search" : "search"
+      "click .search" : "search",
+      "click .back"   : "back"
     },
     
     render: function() {
@@ -49,8 +57,12 @@ App.Views.Lists = Backbone.View.extend({
       console.log('search');
       this.collection.search(this.$('.searchfield')[0].value);
       //this.resetAll();
-      console.log('search done')
+      console.log('search done');
       return false;
+    },
+    
+    back: function(){
+      this.tabs.panels.set('index');
     }
     
 });

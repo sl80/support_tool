@@ -18,22 +18,22 @@ $(function() {
 
 
 var Tab = function(tabs){
-  
+  console.log('new Tab', tabs);
   this.tabs = $(tabs);
-  this.active_tab = this.tabs.find('.tab-active');
+  this.active_tab = this.tabs.children('.tab-active');
   //console.log('active tab is ',this.active_tab[0])  
     
   this.set = function(tab){
-    //console.log('tab set '+tab);
+    console.log('tab set '+tab);
     this.active_tab.removeClass('tab-active');
-    this.active_tab = this.tabs.find('.tab-'+tab);
+    this.active_tab = this.tabs.children('.tab-'+tab);
     this.active_tab.addClass('tab-active');
     //console.log('tab set '+tab+' done');
   };
   
   this.close = function(){
     this.active_tab.removeClass('tab-active');
-    this.active_tab = this.tabs.find('.tab-active');
+    this.active_tab = this.tabs.children('.tab-active');
   }
 };
 
